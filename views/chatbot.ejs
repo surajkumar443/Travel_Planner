@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AI Travel Assistant</title>
+    <!-- css files -->
+    <link rel="stylesheet" href="/style/shared/header.css">
+    <link rel="stylesheet" href="/style/shared/general.css">
+    <link rel="stylesheet" href="/style/sidebar.css">
+    <link rel="stylesheet" href="/style/chatbot.css">
+    <!-- pre-hooked libraries and APIs  -->
+    <%- include ('partials/links') %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="chatbot-main">
+        <section class="chatbot">
+            <h1>AI Travel Assistant</h1>
+            <form action="/chatbot-response" method="POST" id="assistant-form">
+                <div class="mb-3">
+                    <label for="query" class="form-label">Your Question</label>
+                    <input type="text" class="form-control" id="query" name="query" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ask</button>
+            </form>
+
+            <% if (typeof response !== 'undefined') { %>
+                <div id="assistant-response" class="assistant-response mt-3">
+                    <h5>Your Question:</h5>
+                    <p><%= query %></p>
+                    <h5>Assistant's Response:</h5>
+                    <p><%= response %></p>
+                </div>
+            <% } %>
+            <!-- Trip content -->
+        </section>
+
+        <section id="map"></section>
+    </div>
+
+    <%- include('partials/login.ejs') %>
+    <%- include('partials/signup.ejs') %>
+
+    <script src="/scripts/chatbot.js" type="module"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  padding: 100px 0 0 0;
+  font-family: Roboto, Arial;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.footer-right .footer-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right .footer-links li {
+  display: inline;
+}
+
+.footer-right .footer-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+.footer-right .footer-links a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Itinerary Detail</title>
+    <!-- css files -->
+    <link rel="stylesheet" href="/style/shared/header.css">
+    <link rel="stylesheet" href="/style/shared/general.css">
+    <link rel="stylesheet" href="/style/sidebar.css">
+    <link rel="stylesheet" href="/style/itinerary.css">
+    <!-- pre-hooked libraries and APIs  -->
+    <%- include ('partials/links') %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+        
+
+    <div class="itinerary-main">
+        <div class="sidebar">
+            <a href="#" class="btn btn-primarty" id="assitant-button">
+                AI Assistant
+            </a>
+        </div>
+ 
+        <section class="itinerary-detail-grid">
+            <div class="itinerary-overview">
+                <!-- Overview Trip content for poular itineraries from front page-->
+            </div>
+        
+            <div class="itinerary-details">
+              <h2 class="itinerary-heading">Itinerary</h2>
+              <!-- Daily Trip content -->
+              <% if (itinerary && itinerary.length > 0 && activities && activities.length > 0) { %>
+                <% for (let i = 1; i <= itinerary[0].duration; i++) { %>
+                  <div class="accordion daily-schedule" id="accordion-day<%= i %>">
+                    <h3 style="cursor: pointer;">
+                      <div class="arrow right"></div>
+                      Day <%= i %>
+                    </h3>
+                    <div class="accordion-content itineraryDayLabels" id="day<%= i %>">
+                        <% 
+                        const dayId = `day${i}`;
+                        %>
+                        <% for (let j = 0; j < activities.length; j++) { %>
+                            <% if (activities[j].dayId === dayId) { %>
+                              <div class="added-place-card place-card" id="card <%= activities[j].placeId %> <%= activities[j].dayId %>" data-name="<%= activities[j].name %>" data-address="<%= activities[j].address %>">
+                                <div class="saved-place-content">
+                                  <p class="place-name"><%= activities[j].name %></p>
+                                  <p class="place-address"><%= activities[j].address %></p>
+                                  <p>
+                                    <button type="button" class="btn btn-secondary btn-sm removeBtn" id="remove <%= activities[j].placeId %> <%= activities[j].dayId %>"> Remove </button>
+                                  </p>
+                                </div>
+                              </div>
+                            <% } %>
+                        <% } %>
+                    </div>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+            
+            <div class="saved-place-detail-grid">
+                <div class="saved-place-overview">
+                    <div id="saved-place-num"></div>
+                    <div class="saved-place-list"></div>
+                </div>
+                <div class="saved-place-details"></div>
+            </div>
+
+            <button class="save-itinerary-btn">Save Itinerary</button>
+        </section>
+        
+            <!-- Trip content -->
+        <section class="place-detail-grid">
+            <div class="place-overview">
+                <div class="place-filter">
+                  <div class="filter-buttons">
+                    <li class="filter-li" id="see">
+                        <a class="btn" href="#"><i class="material-icons">local_see</i>Site</a>
+                    </li>
+                    <li class="filter-li" id="hotel">
+                        <a class="btn" href="#"><i class="material-icons">local_hotel</i>Hotel</a>
+                    </li>
+                    <li class="filter-li" id="mall">
+                        <a class="btn" href="#"><i class="material-icons">local_mall</i>Shop</a>
+                    </li>
+                    <li class="filter-li" id="dining">
+                        <a class="btn" href="#"><i class="material-icons">local_dining</i>Food</a>
+                    </li>
+                    <li class="filter-li" id="cafe">
+                        <a class="btn" href="#"><i class="material-icons">local_cafe</i>Cafe</a>
+                    </li>
+                    <li class="filter-li" id="bar">
+                        <a class="btn" href="#"><i class="material-icons">local_bar</i>Drinks</a>
+                    </li>
+                  </div>
+                  <div class="action-links" id="filter-actions">
+                    <a id="clear-filter">Clear</a>
+                    <a id="apply-filter">Apply</a>
+                  </div>
+                </div>
+                <div id="place-num">0 Place</div>
+                <div class="place-list"></div>
+              </div>
+              <div class="place-details"></div>
+        </section>
+
+        
+        <section id="map"></section>
+    </div>
+        
+    <%- include('partials/login.ejs') %>
+    <%- include('partials/signup.ejs') %>
+
+    <% if (itinerary && itinerary.length > 0 && activities && activities.length > 0) { %>
+    <script>
+      // Embed the itinerary destination value
+      const itineraryDestination = "<%= itinerary[0].destination %>";
+    </script>
+    <% } %>
+    <script src="/scripts/itinerary.js" type="module"></script>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.chatbot-main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 85px;
+}
+
+/* Chatbot Section */
+.chatbot {
+  display: flex; /* Use flexbox */
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a sleek look */
+  font-family: 'Montserrat', sans-serif; /* Use the modern font */
+}
+
+#map {
+  width: 50%;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  height: 100%;
+}
+
+.chatbot h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center text horizontally */
+  color: #333;
+  border-bottom: 2px solid #e6e6e6; /* Adjusting border color to match the website's theme */
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+#assistant-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make the form take the full width */
+}
+
+#assistant-form .form-label {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+#assistant-form .form-control {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+#assistant-form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+#assistant-form .btn-primary {
+  background-color: #ff5a5f; /* Match the button color to the rest of the website */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px; /* Adjust border-radius to match other buttons */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#assistant-form .btn-primary:hover {
+  background-color: #ff383b; /* Match the hover color */
+}
+
+#assistant-response {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif; /* Use the modern font */
+}
+
+#assistant-response h5 {
+  margin: 10px 0;
+  color: #007bff;
+}
+
+#assistant-response p {
+  margin: 0 0 10px 0;
+  color: #333;
+}

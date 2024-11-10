@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Saved Itineraries</title>
+    <!-- css files -->
+    <link rel="stylesheet" href="/style/shared/header.css">
+    <link rel="stylesheet" href="/style/shared/general.css">
+    <link rel="stylesheet" href="/style/savedItineraries.css">
+    <!-- pre-hooked libraries and APIs  -->
+    <%- include ('partials/links') %>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+    <div class="main-saved-itineraries">
+      <% for(let i=0; i<itineraries.length; i++) { %>
+        <div class="save-itinerary-container" id="<%=itineraries[i].itineraryId%>">
+          <a href="/itinerary-edit/<%=itineraries[i].itineraryId%>" class="itinerary-edit-link">
+            <div class="itinerary-card">
+              <!-- <img src="/img/location-photos/Alaska.jpg" alt="Alaska"> -->
+              <div class="itinerary-detail">
+                <h3><%=itineraries[i].destination%></h3>
+              </div>
+              <div class="dates">
+                <%=itineraries[i].startDate%> - <%=itineraries[i].endDate%>
+              </div>
+            </div>
+          </a>
+          <button class="delete-btn">Delete</button>
+        </div>
+        
+      <% } %> 
+    </div>
+    <%- include('partials/footer.ejs') %>
+    <%- include('partials/login.ejs') %>
+    <%- include('partials/signup.ejs') %>
+    <script src="/scripts/savedItineraries.js" type="module"></script>
+  </body>
+</html>

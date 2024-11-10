@@ -1,0 +1,131 @@
+.website-header{
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  z-index: 100;
+}
+
+.website-logo{
+  width:80px;
+}
+
+.website-header-middle-section {
+  flex: 0.8;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 2px 5px rgb(153, 153, 153, 0.2);
+  height: 46px;
+  overflow: hidden;
+  
+  display: flex;
+  align-items: center;
+
+  transition: box-shadow 0.3s;
+}
+
+.website-header-middle-section:hover, .user-icon:hover{
+  box-shadow: 2px 2px 5px rgb(153, 153, 153, 0.6);
+  transition: 0.3s;
+}
+
+.input-separator {
+  width: 1px;
+  height: 20px;
+  background-color: #e6e6e6;
+  margin: 0 10px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 40px;
+  border: none;
+  border-radius: 20px;
+  padding: 0px 10px;
+  margin: 0;
+  height: 46px;
+}
+
+.search-input:hover{
+  background-color: #e6e6e6;
+}
+
+.search-input:focus{
+  outline: none;
+  background-color: white;
+}
+
+.search-input.unfocused{
+  background-color: #e6e6e6
+}
+
+#search-destination{
+  flex: 2.0;
+}
+
+#add-guest{
+  flex: 0.7;
+}
+
+.search-button {
+  background-color: #ff5a5f;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #ff4d4f;
+}
+
+.search-icon{
+  height: 22px;
+  margin-left: 2px;
+  margin-top: 3px;
+}
+
+.user-icon{
+  width: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  top: 68px;
+  right: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 150px;
+  transition: display 1s;
+}
+
+.dropdown-item{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333
+}
+
+.dropdown-item:hover{
+  background-color: #e6e6e6;
+}
+
+.dropdown-menu.active{
+  display: block;
+}

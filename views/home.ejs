@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <!-- css files -->
+    <link rel="stylesheet" href="/style/shared/header.css">
+    <link rel="stylesheet" href="/style/shared/general.css">
+    <link rel="stylesheet" href="/style/homePage.css">
+    <link rel="stylesheet" href="/style/sidebar.css">
+    <!-- pre-hooked libraries and APIs  -->
+    <%- include ('partials/links.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <div class="main-home">
+    </div>
+    <%- include('partials/footer.ejs') %>
+    <%- include('partials/login.ejs') %>
+    <%- include('partials/signup.ejs') %>
+    <script src="/scripts/home.js" type="module"></script>
+  </body>
+</html>

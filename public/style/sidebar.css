@@ -1,0 +1,16 @@
+#assitant-button {
+  background: linear-gradient(45deg, #f75940, #7045af);
+  color: white;
+  padding: 15px 30px; /* Adjusted padding for top/bottom and left/right */
+  font-size: 15px;
+  border-radius: 0 30px 30px 0; /* Adjusted border-radius for left squared and right rounded */
+  letter-spacing: 0;
+  text-align: center;
+  display: inline-block; /* Ensures the button's content is properly centered */
+  white-space: nowrap; /* Prevents text from wrapping */
+  line-height: 1; /* Ensures the text is vertically centered */
+  position: fixed;
+  bottom: 40px;
+  z-index: 1001;
+}
+

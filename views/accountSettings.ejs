@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Itinerary Detail</title>
+    <!-- css files -->
+    <link rel="stylesheet" href="/style/shared/header.css">
+    <link rel="stylesheet" href="/style/shared/general.css">
+    <link rel="stylesheet" href="../style/accountSettings.css">
+    <!-- pre-hooked libraries and APIs  -->
+    <%- include ('partials/links') %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body style="display:flex; justify-content:center;">
+    <%- include('partials/header') %>
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="/img/icon/default-user-icon.png">
+                    <%= user[0].firstName %> <%= user[0].lastName %>
+                    <span class="text-black-50"><%= user[0].emailAddress %></span><span> </span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <form method="post" action="/accountSettings">
+                        <div class="row mt-2">
+                            <div class="col-md-6">
+                                <label class="labels">First Name</label>
+                                <input type="text" class="form-control" placeholder="first name" value="<%= user[0].firstName %>" name="firstName">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">Last Name</label>
+                                <input type="text" class="form-control" placeholder="last name" value="<%= user[0].lastName %>" name="lastName">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label class="labels">Mobile Number</label>
+                                <input type="text" class="form-control" placeholder="enter phone number" value="<%= user[0].mobilePhone ? user[0].mobilePhone : '' %>" name="mobilePhone">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Address Line</label>
+                                <input type="text" class="form-control" placeholder="enter address line 1" value="<%= user[0].addressLine ? user[0].addressLine : '' %>" name="addressLine">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Postcode</label>
+                                <input type="text" class="form-control" placeholder="enter postal code" value="<%= user[0].postalCode ? user[0].postalCode : '' %>" name="postalCode">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Email</label>
+                                <input type="text" class="form-control" placeholder="enter email" value="<%= user[0].emailAddress %>" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label class="labels">Country</label>
+                                <input type="text" class="form-control" placeholder="country" value="<%= user[0].country ? user[0].country : '' %>" name="country">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">State/Region</label>
+                                <input type="text" class="form-control" placeholder="state" value="<%= user[0].state ? user[0].state : '' %>" name="state">
+                            </div>
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button class="profile-button" type="submit">Save Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/login.ejs') %>
+    <%- include('partials/signup.ejs') %>
+
+    <script src="/scripts/accountSettings.js" type="module"></script>
+</body>
+</html>

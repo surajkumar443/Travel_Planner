@@ -1,0 +1,44 @@
+<div class="website-header">
+  <div class="website-header-left-section">
+    <a href='/' class="header-link">
+      <img class="website-logo" src="/img/website-logo.png">
+    </a>
+  </div>
+
+  <div class="website-header-middle-section">
+    <input class="search-input" id="search-destination" type="text" placeholder="Search destination">
+    <div class="input-separator"></div>
+    <input class="search-input" id="start-date" type="text" placeholder="Start date" class="search-input">
+    <div class="input-separator"></div>
+    <input class="search-input" id="end-date" type="text" placeholder="End date" class="search-input">
+    <div class="input-separator"></div>
+    <select class="search-input" id="add-guest">
+      <option value="1">1 guest</option>
+      <option value="2">2 guests</option>
+      <option value="3">3+ guests</option>
+    </select>
+    <button class="search-button">
+      <img class="search-icon" src="/img/icon/search-icon.png">
+    </button>
+  </div>
+
+  <div class="website-header-right-section fw-light">
+    <% if (typeof message != "undefined") { %>
+      <%=message%>   
+    <% } %>
+    <img class="user-icon" src="/img/icon/default-user-icon.png">
+    <div class="dropdown-menu">
+      <!-- If user logged in, show this menu -->
+      <% if (loggedIn) { %>
+        <span id="userId" class="dropdown-item fw-bold"><%=username%></span>
+        <a href="/savedItineraries" class="dropdown-item fw-light">Itineraries</a>
+        <a href="/accountSettings" class="dropdown-item fw-light">Settings</a>
+        <a href="/logout" id="logout-modal" class="dropdown-item fw-light">Log out</a>
+      <% }  else { %>
+        <!-- If user not logged in, show this menu -->
+        <a href="#" id="login-modal" class="dropdown-item fw-light">Log in</a>
+        <a href="#" id="signup-modal" class="dropdown-item fw-light">Sign up</a>
+      <% } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!-- login modal -->
+<div id="loginModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100">Login</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-auto" style="width: 400px;">
+
+        <form method="POST" action="/user/login" autocomplete="off">
+          <!-- email address -->
+          <div class="row">
+            <div class="col-md-12">
+            <div class="form-group">
+             <label for="emailAddress">Email Address</label>
+              <input type="email" class="form-control" name="emailAddress" placeholder="Enter email" required>
+             </div>
+            </div>
+          </div><br>
+
+          <!-- password -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+            </div>
+          </div><br>
+          <div class="modal-footer">
+            <div class="d-grid col-md-12 mx-auto">
+              <button id="submitLogin" type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

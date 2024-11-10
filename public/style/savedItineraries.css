@@ -1,0 +1,70 @@
+.main-saved-itineraries{
+  flex: 1;
+  padding: 30px 60px;
+}
+
+.save-itinerary-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+
+.itinerary-card {
+  flex: 1; /* Allows card to grow and fill available space */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-right: 16px; /* Space between card and delete button */
+}
+
+.itinerary-card:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.itinerary-card img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.itinerary-detail {
+  flex: 1; /* Ensures detail section takes up remaining space */
+  display: flex;
+  justify-content: space-between;
+}
+
+.itinerary-detail h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.itinerary-edit-link {
+  flex: 1;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn {
+  height: 100%;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-left: 16px; /* Space between card and button */
+}
+
+.delete-btn:hover {
+  background-color: #ff383b;
+}

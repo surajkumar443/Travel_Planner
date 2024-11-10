@@ -1,0 +1,289 @@
+/* 
+**** Overal Page **** 
+*/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.itinerary-main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 85px;
+}
+
+.itinerary-detail-grid {
+  width: 35%;
+  border-right: 1px solid #e6e6e6;
+  overflow-y: auto;
+}
+
+.place-detail-grid{
+  width: 30%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: auto;
+}
+
+.itinerary-detail-grid::-webkit-scrollbar, .place-detail-grid::-webkit-scrollbar{
+  display: none;
+}
+
+#map {
+  width: 35%;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  height: 100%;
+}
+
+/* Style for the Itinerary heading */
+.itinerary-heading {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 40px 20px;
+  padding-bottom: 10px;
+}
+
+
+
+/*
+**** Left Section **** 
+*/
+.image-container {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.image-container .details {
+  width: 85%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(153, 153, 153, 0.4);
+}
+
+.itinerary-details{
+  padding: 10px;
+}
+
+.daily-schedule{
+  min-height: 100px;
+  margin-top: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.itinerary-detail-grid img {
+  width: 100%;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content:empty:after { 
+  content: "Please select an activity for this day.";
+} 
+
+
+.accordion.show .accordion-content {
+  display: block;
+}
+
+.accordion.show .arrow {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  bottom: 5px;
+  cursor: pointer;
+
+  transition: .5s;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.save-itinerary-btn {
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  margin-right: 20px;
+  margin-top: 40px;
+  cursor: pointer;
+  float: right;
+}
+
+.save-itinerary-btn:hover {
+  background-color: #ff383b;
+}
+
+/*
+**** Middle Section **** 
+*/
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 5px;
+  padding: 10px 0px;
+  border-bottom: 2px dotted grey;
+}
+
+li{
+  list-style: none;
+}
+
+.filter-buttons .btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width:100%;
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+
+.filter-buttons .btn:hover{
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.filter-buttons .selected{
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+}
+
+.place-filter {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.place-filter .action-links {
+  margin-top: 1rem;
+  float: right;
+}
+
+.action-links:hover, .action-links:active {
+  cursor: pointer;
+}
+
+#clear-filter {
+  margin-right: .5rem;
+  color: #616161;
+}
+
+#clear-filter:hover {
+  color: #080808;
+}
+
+#apply-filter {
+  color: #ff5a5f;
+}
+
+#apply-filter:hover{
+  color: #ff0004;
+}
+
+.place-card {
+  padding-left: 40px;
+  margin: 20px 0px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.place-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.place-card .dropdown{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.place-img-container{
+  width: 12rem;
+  border-radius: 0 4px 4px 0;
+  overflow: hidden;
+}
+
+.place-img {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 0 4px 4px 0;
+}
+
+.place-content {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.place-name {
+  font-weight: 700;
+}
+
+.place-rating{
+  display: flex;
+  align-items: center;
+}
+
+/* Outer container to hold the stars */
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  color: #ccc;
+  overflow: hidden;
+  margin-right: 5px;
+}
+
+/* Inner container to display the filled portion */
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f8ce0b;
+  margin-right: 5px;
+}
+
+.stars-outer::before,
+.stars-inner::before {
+  content: "★★★★★"; /* Using Unicode stars */
+}
